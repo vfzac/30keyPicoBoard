@@ -21,48 +21,40 @@ keyboard.diode_orientation = DiodeOrientation.COL2ROW
 
 FN = KC.MO(1)
 XXXXXXX = KC.TRNS
+OOOOOOO = KC.NO
 
 keyboard.keymap = [
     # Qwerty
     # .---------------------------------------------------------------------.
     # |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  |
     # |------+------+------+------+------+------+------+------+------+------|
-    # |   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |XXXXXX|
+    # |   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |NOTCON|
     # |------+------+------+------+------+------+------+------+------+------|
-    # |   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |XXXXXX|XXXXXX|
+    # |   Z  |   X  |   C  |   V  |   B  |   N  |   M  | Enter|NOTCON|NOTCON|
     # |------+------+------+------+------+------+------+------+------+------|
-    # |XXXXXX|XXXXXX|XXXXXX| Alt  |Space | Alt  |XXXXXX|XXXXXX|XXXXXX|XXXXXX|
+    # |NOTCON|NOTCON|NOTCON| Alt  |Space |  Fn  |NOTCON|NOTCON|NOTCON|NOTCON|
     # '---------------------------------------------------------------------'
     [
-        KC.Q,    KC.W,    KC.E,    KC.R,    KC.T,   KC.Y,    KC.U,    KC.I,    KC.O,       KC.P,
-        KC.A,    KC.S,    KC.D,    KC.F,    KC.G,   KC.H,    KC.J,    KC.K,    KC.L,    XXXXXXX,
-        KC.Z,    KC.X,    KC.C,    KC.V,    KC.B,   KC.N,    KC.M,    XXXXXXX, XXXXXXX, XXXXXXX,
-        XXXXXXX, XXXXXXX, XXXXXXX, KC.LALT, KC.SPC, FN,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+        KC.Q,       KC.W,    KC.E,    KC.R,    KC.T,  KC.Y,    KC.U,      KC.I,    KC.O,    KC.P,
+        KC.A,       KC.S,    KC.D,    KC.F,    KC.G,  KC.H,    KC.J,      KC.K,    KC.L, OOOOOOO,
+        KC.Z,       KC.X,    KC.C,    KC.V,    KC.B,  KC.N,    KC.M,  KC.ENTER, OOOOOOO, OOOOOOO,
+        OOOOOOO, OOOOOOO, OOOOOOO, KC.LALT,  KC.SPC,    FN, OOOOOOO,   OOOOOOO, OOOOOOO, OOOOOOO
     ],
-    # Alt
-    # ,-------------------------------------------------------------------------------------------------.
-    # |   `  |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  | F10  | F11  | F12  | Del  |
-    # |------+------+------+------+------+------+------+------+------+------+------+------+------+------|
-    # |      |      |  UP  |      |      |      |      |      | Insrt| Home | PgUp |      |      |      |
-    # |------+------+------+------+------+-------------+------+------+------+------+------+------+------|
-    # |      | LEFT | DOWN | RIGHT|      |      |      |      | Del  | End  | PgDn |      |      |      |
-    # |------+------+------+------+------+------+------+------+------+------+------+------+------+------|
-    # |      |      |      |      |      |      |      | MUTE | VOLD | VOLU |      |      |      |      |
-    # |------+------+------+------+------+------+------+------+------+------+------+------+------+------|
-    # |      |      |      |      |      |      |      |      |      |      | App  | Fn   |      |      |
-    # `------------------------------------------------------------------------------------------+------'
-    [
-        KC.GESC,  KC.N1,   KC.N2,   KC.N3,   KC.N4,   KC.N5,  KC.N6,   KC.N7,   KC.N8,   KC.N9,   KC.N0,   KC.MINS, KC.EQUAL, KC.BSPC,
-        KC.TAB,   KC.Q,    KC.W,    KC.E,    KC.R,    KC.T,   KC.Y,    KC.U,    KC.I,    KC.O,    KC.P,    KC.LBRC, KC.RBRC,  KC.BSLASH,
-        KC.CAPS,  KC.A,    KC.S,    KC.D,    KC.F,    KC.G,   KC.H,    KC.J,    KC.K,    KC.L,    KC.SCLN, KC.QUOT, XXXXXXX,  KC.ENTER,
-        KC.LSFT,  KC.Z,    KC.X,    KC.C,    KC.V,    KC.B,   KC.N,    KC.M,    KC.COMM, KC.DOT,  KC.SLSH, XXXXXXX, XXXXXXX,  KC.RSFT,
-        KC.LCTRL, KC.LGUI, KC.LALT, XXXXXXX, XXXXXXX, KC.SPC, XXXXXXX, XXXXXXX, XXXXXXX, KC.RALT, KC.RGUI, FN,      XXXXXXX,  KC.RCTRL
-        
-        KC.GRV,  KC.F1,   KC.F2,   KC.F3,    KC.F4,   KC.F5,   KC.F6,   KC.F7,   KC.F8,   KC.F9,   KC.F10,  KC.F11,   KC.F12,  KC.DEL,
-        XXXXXXX, XXXXXXX, KC.UP,   XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC.INS,  KC.HOME, KC.PGUP, XXXXXXX,  XXXXXXX, XXXXXXX,
-        XXXXXXX, KC.LEFT, KC.DOWN, KC.RIGHT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC.DEL,  KC.END,  KC.PGDN, XXXXXXX,  XXXXXXX, XXXXXXX,
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, KC.MUTE, KC.VOLD, KC.VOLU, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX,
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC.APP,  XXXXXXX,  XXXXXXX, XXXXXXX,
+    # FN
+    # .---------------------------------------------------------------------.
+    # | ESC  |   7  |   8  |   9  |      |      |      |      |      | BSPC |
+    # |------+------+------+------+------+------+------+------+------+------|
+    # | TAB  |   4  |   5  |   6  |      |      |      |      |      |NOTCON|
+    # |------+------+------+------+------+------+------+------+------+------|
+    # |      |   1  |   2  |   3  |   0  |   ,  |   .  | Enter|NOTCON|NOTCON|
+    # |------+------+------+------+------+------+------+------+------+------|
+    # |NOTCON|NOTCON|NOTCON| Alt  |Space |  Fn  |NOTCON|NOTCON|NOTCON|NOTCON|
+    # '---------------------------------------------------------------------'
+    [        
+        KC.GESC,   KC.N7,   KC.N8,   KC.N9,  XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,  XXXXXXX,  KC.BSPC,
+        KC.TAB,    KC.N4,   KC.N5,   KC.N6,  XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,  XXXXXXX,  OOOOOOO,
+        XXXXXXX,   KC.N1,   KC.N2,   KC.N3,    KC.N0, KC.COMM,  KC.DOT, KC.ENTER,  OOOOOOO,  OOOOOOO,
+        OOOOOOO, OOOOOOO, OOOOOOO, KC.LALT,   KC.SPC,      FN, OOOOOOO,  OOOOOOO,  OOOOOOO,  OOOOOOO
     ],
 ]
 
