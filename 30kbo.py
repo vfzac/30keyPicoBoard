@@ -31,6 +31,7 @@ FN2 = KC.MO(2)
 ALEFT = KC.TD(
     KC.LCTRL,
     FN,
+    KC.LSHIFT,
     FN2,
 )
 ARIGHT = KC.TD(
@@ -79,19 +80,19 @@ keyboard.keymap = [
     ],
     # FN
     # .---------------------------------------------------------------------.
-    # | ESC  |     |     |     |      |      |      |      |      | BSPC |
+    # | ESC  |      |      |      |   [  |   ]  |   \  |   -  |   =  | BSPC |
     # |------+------+------+------+------+------+------+------+------+------|
-    # |ALTTAB|     |     |     |      |      |      |      |      |______|
+    # |ALTTAB|      |      |      |      |   ;  |   '  |      |      |______|
     # |------+------+------+------+------+------+------+------+------+------|
-    # |CTLTAB|     |     |     |      |   ,  |   .  | Enter|______|______|
+    # |CTLTAB|      |      |      |  ,   |   .  |   /  | Enter|______|______|
     # |------+------+------+------+------+------+------+------+------+------|
     # |______|______|______|ALEFT |Space |ARIGHT|______|______|______|______|
     # '---------------------------------------------------------------------'
     [  
-        KC.GESC,    KC.N7,     KC.N8,     KC.N9,  XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,  XXXXXXX,  KC.BSPC,
-        ALTTAB,   XXXXXXX,   XXXXXXX,   XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,  XXXXXXX,  OOOOOOO,
-        CTLTAB,   XXXXXXX,   XXXXXXX,   XXXXXXX,    XXXXXXX, KC.COMM,  KC.DOT, KC.ENTER,  OOOOOOO,  OOOOOOO,
-        OOOOOOO, OOOOOOO, OOOOOOO, XXXXXXX,   KC.SPC, XXXXXXX, OOOOOOO,  OOOOOOO,  OOOOOOO,  OOOOOOO
+        KC.GESC,    KC.N7,    KC.N8,   KC.N9,   KC.LBRACKET,    KC.RBRACKET,  KC.BSLASH,   KC.MINUS, KC.EQUAL,  KC.BSPC,
+        ALTTAB,   XXXXXXX,  XXXXXXX,   XXXXXXX,     XXXXXXX,      KC.SCOLON,   KC.QUOTE,    XXXXXXX,  XXXXXXX,  OOOOOOO,
+        CTLTAB,  XXXXXXX,   XXXXXXX,   XXXXXXX,     KC.COMM,         KC.DOT,   KC.SLASH,   KC.ENTER,  OOOOOOO,  OOOOOOO,
+        OOOOOOO, OOOOOOO,   OOOOOOO,   XXXXXXX,      KC.SPC,        XXXXXXX,    OOOOOOO,    OOOOOOO,  OOOOOOO,  OOOOOOO
     ],
     # FN2
     # .---------------------------------------------------------------------.
