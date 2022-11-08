@@ -31,7 +31,6 @@ FN2 = KC.MO(2)
 ALEFT = KC.TD(
     KC.LCTRL,
     FN,
-    KC.LSHIFT,
     FN2,
 )
 ARIGHT = KC.TD(
@@ -82,17 +81,17 @@ keyboard.keymap = [
     # .---------------------------------------------------------------------.
     # | ESC  |      |      |      |   [  |   ]  |   \  |   -  |   =  | BSPC |
     # |------+------+------+------+------+------+------+------+------+------|
-    # |ALTTAB|      |      |      |      |   ;  |   '  |      |      |______|
+    # |  TAB |      |      |      |      |   ;  |   '  |      |      |______|
     # |------+------+------+------+------+------+------+------+------+------|
-    # |CTLTAB|      |      |      |  ,   |   .  |   /  | Enter|______|______|
+    # |      |      |      |      |  ,   |   .  |   /  | Enter|______|______|
     # |------+------+------+------+------+------+------+------+------+------|
     # |______|______|______|ALEFT |Space |ARIGHT|______|______|______|______|
     # '---------------------------------------------------------------------'
     [  
-        KC.GESC,    KC.N7,    KC.N8,   KC.N9,   KC.LBRACKET,    KC.RBRACKET,  KC.BSLASH,   KC.MINUS, KC.EQUAL,  KC.BSPC,
-        ALTTAB,   XXXXXXX,  XXXXXXX,   XXXXXXX,     XXXXXXX,      KC.SCOLON,   KC.QUOTE,    XXXXXXX,  XXXXXXX,  OOOOOOO,
-        CTLTAB,  XXXXXXX,   XXXXXXX,   XXXXXXX,     KC.COMM,         KC.DOT,   KC.SLASH,   KC.ENTER,  OOOOOOO,  OOOOOOO,
-        OOOOOOO, OOOOOOO,   OOOOOOO,   XXXXXXX,      KC.SPC,        XXXXXXX,    OOOOOOO,    OOOOOOO,  OOOOOOO,  OOOOOOO
+        KC.GESC,  XXXXXXX,  XXXXXXX,   XXXXXXX,   KC.LBRACKET,    KC.RBRACKET,  KC.BSLASH,   KC.MINUS, KC.EQUAL,  KC.BSPC,
+        KC.TAB,   XXXXXXX,  XXXXXXX,   XXXXXXX,     XXXXXXX,      KC.SCOLON,   KC.QUOTE,    XXXXXXX,  XXXXXXX,  OOOOOOO,
+        XXXXXXX,  XXXXXXX,  KC.LALT,   XXXXXXX,     KC.COMM,         KC.DOT,   KC.SLASH,   KC.ENTER,  OOOOOOO,  OOOOOOO,
+        OOOOOOO,  OOOOOOO,  OOOOOOO,   ALEFT,      KC.SPC,        ARIGHT,    OOOOOOO,    OOOOOOO,  OOOOOOO,  OOOOOOO
     ],
     # FN2
     # .---------------------------------------------------------------------.
@@ -108,7 +107,7 @@ keyboard.keymap = [
         KC.N1,      KC.N2,    KC.N3,    KC.N4,    KC.N5,    KC.N6,    KC.N7,     KC.N8,    KC.N9,    KC.N0,
         XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,   XXXXXXX,  XXXXXXX,  OOOOOOO,
         XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  KC.COMM,   KC.DOT,  KC.ENTER,  OOOOOOO,  OOOOOOO,
-        OOOOOOO,  OOOOOOO,  OOOOOOO,  XXXXXXX,   KC.SPC,  XXXXXXX,  OOOOOOO,   OOOOOOO,  OOOOOOO,  OOOOOOO
+        OOOOOOO,  OOOOOOO,  OOOOOOO,  ALEFT,   KC.SPC,  ARIGHT,  OOOOOOO,   OOOOOOO,  OOOOOOO,  OOOOOOO
     ],
 ]
 
