@@ -1,7 +1,7 @@
 # custom 30 keys board
 # github link
 # Requires CircuitPython 7.0.0 to support the RP2040 MCU
-
+# vscode browser test
 import board
 
 from kmk.keys import KC
