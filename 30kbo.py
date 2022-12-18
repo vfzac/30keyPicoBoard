@@ -84,17 +84,17 @@ keyboard.keymap = [
     # .---------------------------------------------------------------------.
     # | ESC  |  1   |  2   |  3   |   [  |   ]  |   \  |  -   |   =  | BSPC |
     # |------+------+------+------+------+------+------+------+------+------|
-    # |  TAB |  4   |  5   |  6   |      |      |   ;  |   '  | SHFT |______|
+    # |  TAB |  4   |  5   |  6   |      |      |   ;  |   '  | DEL  |______|
     # |------+------+------+------+------+------+------+------+------+------|
     # |  CTL |  7   |  8   |  9   |  0   |   ,  |   .  |  /   |______|______|
     # |------+------+------+------+------+------+------+------+------+------|
-    # |______|______|______|ALEFT |Space |ARIGHT|______|______|______|______|
+    # |______|______|______|ALEFT | Alt  |ARGHT |______|______|______|______|
     # '---------------------------------------------------------------------'
     [
-        KC.GESC,  KC.N1,    KC.N2,     KC.N3,    KC.LBRACKET,  KC.RBRACKET,  KC.BSLASH,  KC.MINUS,  KC.EQUAL,   KC.BSPC,
-        KC.TAB,   KC.N4,    KC.N5,     KC.N6,    XXXXXXX,      XXXXXXX,      KC.SCOLON,  KC.QUOTE,  XXXXXXX,    OOOOOOO,
-        KC.LCTRL, KC.N7,    KC.N8,     KC.N9,    KC.N0,        KC.COMM,      KC.DOT,     KC.SLASH,  KC.LSHIFT,  OOOOOOO,
-        OOOOOOO,  OOOOOOO,  OOOOOOO,   XXXXXXX,  XXXXXXX,      XXXXXXX,      OOOOOOO,    OOOOOOO,   OOOOOOO,    OOOOOOO
+        KC.GESC,  KC.N1,    KC.N2,     KC.N3,    KC.LBRACKET,  KC.RBRACKET,  KC.BSLASH,  KC.MINUS,  KC.EQUAL,  KC.BSPC,
+        KC.TAB,   KC.N4,    KC.N5,     KC.N6,    XXXXXXX,      XXXXXXX,      KC.SCOLON,  KC.QUOTE,  KC.DEL,    OOOOOOO,
+        KC.LCTRL, KC.N7,    KC.N8,     KC.N9,    KC.N0,        KC.COMM,      KC.DOT,     KC.SLASH,  OOOOOOO,   OOOOOOO,
+        OOOOOOO,  OOOOOOO,  OOOOOOO,   XXXXXXX,  KC.LALT,      XXXXXXX,      OOOOOOO,    OOOOOOO,   OOOOOOO,   OOOOOOO
     ],
     # FN2
     # .---------------------------------------------------------------------.
@@ -104,7 +104,7 @@ keyboard.keymap = [
     # |------+------+------+------+------+------+------+------+------+------|
     # |XXXXXXX|     |      |      |      |   ,  |  .   |Enter |______|______|
     # |------+------+------+------+------+------+------+------+------+------|
-    # |______|______|______|ALEFT |Space |ARIGHT|______|______|______|______|
+    # |______|______|______|ALEFT |      |ARIGHT|______|______|______|______|
     # '---------------------------------------------------------------------'
     [        
         KC.F1,    KC.F2,    KC.F3,    KC.F4,    KC.F5,    KC.F6,    XXXXXXX,  KC.UP,     XXXXXXX,  XXXXXXX,
