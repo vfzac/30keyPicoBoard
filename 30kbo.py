@@ -28,16 +28,17 @@ keyboard.diode_orientation = DiodeOrientation.COLUMNS
 # Additional Keys definition
 FN = KC.MO(1)
 FN2 = KC.MO(2)
-ALEFT = KC.TD(
+ArLEFT = KC.TD(
     KC.LCTRL,
     FN,
-    FN2,
+    KC.LGUI,
 )
-ARIGHT = KC.TD(
-    FN,
+ArRIGHT = KC.TD(
     KC.LSHIFT,
+    FN,
     FN2,
 )
+#unused sequence, figure out next ver
 ALTTAB = simple_key_sequence(
     (
         KC.LALT(no_release=True), 
@@ -57,7 +58,9 @@ ALTTAB = simple_key_sequence(
 #     )
 # )
 
+#transparent keys / layer above will apply
 XXXXXXX = KC.TRNS
+#unused keys
 OOOOOOO = KC.NO
 
 keyboard.keymap = [
@@ -72,42 +75,42 @@ keyboard.keymap = [
     # |______|______|______|ALEFT |Space |ARIGHT|______|______|______|______|
     # '---------------------------------------------------------------------'
     [
-        KC.Q,       KC.W,    KC.E,    KC.R,    KC.T,  KC.Y,    KC.U,      KC.I,    KC.O,    KC.P,
-        KC.A,       KC.S,    KC.D,    KC.F,    KC.G,  KC.H,    KC.J,      KC.K,    KC.L, OOOOOOO,
-        KC.Z,       KC.X,    KC.C,    KC.V,    KC.B,  KC.N,    KC.M,  KC.ENTER, OOOOOOO, OOOOOOO,
-        OOOOOOO, OOOOOOO, OOOOOOO,   ALEFT,  KC.SPC,  ARIGHT, OOOOOOO,   OOOOOOO, OOOOOOO, OOOOOOO
+        KC.Q,    KC.W,    KC.E,     KC.R,    KC.T,    KC.Y,    KC.U,     KC.I,      KC.O,     KC.P,
+        KC.A,    KC.S,    KC.D,     KC.F,    KC.G,    KC.H,    KC.J,     KC.K,      KC.L,     OOOOOOO,
+        KC.Z,    KC.X,    KC.C,     KC.V,    KC.B,    KC.N,    KC.M,     KC.ENTER,  OOOOOOO,  OOOOOOO,
+        OOOOOOO, OOOOOOO, OOOOOOO,  ArLEFT,  KC.SPC,  ArRIGHT, OOOOOOO,  OOOOOOO,   OOOOOOO,  OOOOOOO
     ],
     # FN
     # .---------------------------------------------------------------------.
-    # | ESC  |      |      |      |   [  |   ]  |   \  |   -  |   =  | BSPC |
+    # | ESC  |  1   |  2   |  3   |   [  |   ]  |   \  |  -   |   =  | BSPC |
     # |------+------+------+------+------+------+------+------+------+------|
-    # |  TAB |      |      |      |      |   ;  |   '  |      |      |______|
+    # |  TAB |  4   |  5   |  6   |      |      |   ;  |   '  | SHFT |______|
     # |------+------+------+------+------+------+------+------+------+------|
-    # |      |      |      |      |  ,   |   .  |   /  | Enter|______|______|
+    # |  CTL |  7   |  8   |  9   |  0   |   ,  |   .  |  /   |______|______|
     # |------+------+------+------+------+------+------+------+------+------|
     # |______|______|______|ALEFT |Space |ARIGHT|______|______|______|______|
     # '---------------------------------------------------------------------'
-    [  
-        KC.GESC,  XXXXXXX,  XXXXXXX,   XXXXXXX,   KC.LBRACKET,    KC.RBRACKET,  KC.BSLASH,   KC.MINUS, KC.EQUAL,  KC.BSPC,
-        KC.TAB,   XXXXXXX,  XXXXXXX,   XXXXXXX,     XXXXXXX,      KC.SCOLON,   KC.QUOTE,    XXXXXXX,  XXXXXXX,  OOOOOOO,
-        XXXXXXX,  XXXXXXX,  KC.LALT,   XXXXXXX,     KC.COMM,         KC.DOT,   KC.SLASH,   KC.ENTER,  OOOOOOO,  OOOOOOO,
-        OOOOOOO,  OOOOOOO,  OOOOOOO,   ALEFT,      KC.SPC,        ARIGHT,    OOOOOOO,    OOOOOOO,  OOOOOOO,  OOOOOOO
+    [
+        KC.GESC,  KC.N1,    KC.N2,     KC.N3,    KC.LBRACKET,  KC.RBRACKET,  KC.BSLASH,  KC.MINUS,  KC.EQUAL,   KC.BSPC,
+        KC.TAB,   KC.N4,    KC.N5,     KC.N6,    XXXXXXX,      XXXXXXX,      KC.SCOLON,  KC.QUOTE,  XXXXXXX,    OOOOOOO,
+        KC.LCTRL, KC.N7,    KC.N8,     KC.N9,    KC.N0,        KC.COMM,      KC.DOT,     KC.SLASH,  KC.LSHIFT,  OOOOOOO,
+        OOOOOOO,  OOOOOOO,  OOOOOOO,   XXXXXXX,  XXXXXXX,      XXXXXXX,      OOOOOOO,    OOOOOOO,   OOOOOOO,    OOOOOOO
     ],
     # FN2
     # .---------------------------------------------------------------------.
-    # |   1   |   2  |   3  |   4  |  5   |  6   |  7   |  8   |  9   |  0  |
+    # |   F1 |  F2  |  F3  |  F4  |  F5  |  F6  |      |      |      |      |
     # |------+------+------+------+------+------+------+------+------+------|
-    # |XXXXXXX|      |      |      |      |      |      |      |      |_____|
+    # |   F7 |  F8  |  F9  | F10  | F11  |  F12 |      |      |      |______|
     # |------+------+------+------+------+------+------+------+------+------|
-    # |XXXXXXX|      |      |      |      |   ,  |   .  | Enter|______|_____|
+    # |XXXXXXX|     |      |      |      |   ,  |  .   |Enter |______|______|
     # |------+------+------+------+------+------+------+------+------+------|
-    # |______ |______|______|ALEFT |Space |ARIGHT|______|______|______|_____|
+    # |______|______|______|ALEFT |Space |ARIGHT|______|______|______|______|
     # '---------------------------------------------------------------------'
-    [  
-        KC.N1,      KC.N2,    KC.N3,    KC.N4,    KC.N5,    KC.N6,    KC.N7,     KC.N8,    KC.N9,    KC.N0,
-        XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,   XXXXXXX,  XXXXXXX,  OOOOOOO,
-        XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  KC.COMM,   KC.DOT,  KC.ENTER,  OOOOOOO,  OOOOOOO,
-        OOOOOOO,  OOOOOOO,  OOOOOOO,  ALEFT,   KC.SPC,  ARIGHT,  OOOOOOO,   OOOOOOO,  OOOOOOO,  OOOOOOO
+    [        
+        KC.F1,    KC.F2,    KC.F3,    KC.F4,    KC.F5,    KC.F6,    XXXXXXX,  KC.UP,     XXXXXXX,  XXXXXXX,
+        KC.F7,    KC.F8,    KC.F9,    KC.F10,   KC.F11,   KC.F12,   KC.LEFT,  KC.DOWN,   KC.RGHT,  OOOOOOO,
+        XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  KC.ENTER,  OOOOOOO,  OOOOOOO,
+        OOOOOOO,  OOOOOOO,  OOOOOOO,  XXXXXXX,  XXXXXXX,  XXXXXXX,  OOOOOOO,  OOOOOOO,   OOOOOOO,  OOOOOOO
     ],
 ]
 
