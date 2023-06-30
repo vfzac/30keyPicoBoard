@@ -1,7 +1,7 @@
 # custom 30 keys board
 # github link
 # Requires CircuitPython 7.0.0 to support the RP2040 MCU
-# vscode browser test
+# rename to code.py when importing to the board
 import board
 
 from kmk.keys import KC
@@ -11,18 +11,16 @@ from kmk.scanners import DiodeOrientation
 from kmk.modules.tapdance import TapDance
 from kmk.handlers.sequences import simple_key_sequence
 
-
-
 keyboard = _KMKKeyboard()
 tapdance = TapDance()
 keyboard.modules.append(Layers())
 keyboard.modules.append(tapdance)
 
 keyboard.col_pins = (
-    board.GP1, board.GP2, board.GP3, board.GP4, board.GP5,
-    board.GP6, board.GP7, board.GP8, board.GP9, board.GP10,
+    board.GP2, board.GP3, board.GP4, board.GP5, board.GP10,
+    board.GP11, board.GP12, board.GP13, board.GP14, board.GP15,
 )
-keyboard.row_pins = (board.GP11, board.GP12, board.GP13, board.GP14)
+keyboard.row_pins = (board.GP6, board.GP7, board.GP8, board.GP9)
 keyboard.diode_orientation = DiodeOrientation.COLUMNS
 
 # Additional Keys definition
