@@ -34,14 +34,16 @@ keyboard.diode_orientation = DiodeOrientation.COLUMNS
 # FN = KC.MO(1) #layer 2 of 3
 # FN2 = KC.MO(2) #layer 3 of 3
 CTRLSHFT = KC.LCTL(KC.LSHIFT)
+CTRLALT = KC.LCTL(KC.LALT)
 XXXXXXX = KC.TRNS #transparent keys / layer above will apply
 OOOOOOO = KC.NO #unused keys
 
 #tap dance defn - tapping multiple times have different keys
 FNLEFT = KC.TD( 
     KC.LCTRL,
-    KC.LGUI, #third layer hold / windows key tap
+    KC.LGUI, 
     CTRLSHFT,
+    CTRLALT,
 )
 FNRIGHT = KC.TD(
     KC.RSHIFT,
@@ -49,6 +51,7 @@ FNRIGHT = KC.TD(
     KC.MO(2), #third layer
 )
 FNEX = KC.TD(
+    KC.RSHIFT,
     KC.MO(2), #third layer
 )
 ENCODERCLK = KC.TD(
