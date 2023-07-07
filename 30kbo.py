@@ -11,17 +11,18 @@ from kmk.modules.layers import Layers
 from kmk.modules.tapdance import TapDance
 from kmk.handlers.sequences import simple_key_sequence
 from kmk.modules.holdtap import HoldTap
+from kmk.modules.encoder import EncoderHandler
 
 
 
+encoder_handler = EncoderHandler()
 keyboard = _KMKKeyboard()
 tapdance = TapDance()
 holdtap = HoldTap()
-keyboard.modules.append(Layers())
-keyboard.modules.append(tapdance)
-keyboard.modules.append(holdtap)
+layers = Layers()
+keyboard.modules = [layers, tapdance, holdtap, encoder_handler]
 # tapdance.tap_time = 300 # optional: set a custom tap timeout in ms :: default 300ms
-holdtap.tap_time = 700 # optional: set a custom hold tap timeout in ms 
+# holdtap.tap_time = 700 # optional: set a custom hold tap timeout in ms 
 
 keyboard.col_pins = (
     board.GP2, board.GP3, board.GP4, board.GP5, board.GP10,
@@ -30,6 +31,12 @@ keyboard.row_pins = (board.GP6, board.GP7, board.GP8, board.GP9)
 
 keyboard.diode_orientation = DiodeOrientation.COLUMNS
 
+encoder_handler.pins = (
+    # regular direction encoder and a button
+    (board.GP17, board.GP15, None,), # encoder #1 
+    #(board.GP17, board.GP15, None,), # encoder #2 template
+    )
+
 # Additional Keys definition
 # FN = KC.MO(1) #layer 2 of 3
 # FN2 = KC.MO(2) #layer 3 of 3
@@ -37,6 +44,12 @@ CTRLSHFT = KC.LCTL(KC.LSHIFT)
 CTRLALT = KC.LCTL(KC.LALT)
 XXXXXXX = KC.TRNS #transparent keys / layer above will apply
 OOOOOOO = KC.NO #unused keys
+
+
+encoder_handler.map = [ 
+    (( KC.VOLD, KC.VOLU, KC.MUTE),), # Layer 1
+    #(( KC.VOLD, KC.VOLU, KC.MUTE),( KC.VOLD, KC.VOLU, KC.MUTE),), # Layer with 2 encoder template
+]   #inner parenthesis is for encoder(s), outer is for layers(same with normal keys)
 
 #tap dance defn - tapping multiple times have different keys
 FNLEFT = KC.TD( 
